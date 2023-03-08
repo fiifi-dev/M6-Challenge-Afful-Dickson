@@ -3,6 +3,7 @@ package com.company.customerdataservice.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -13,16 +14,34 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Size(max = 50)
     private String firstName;
+
+    @Size(max = 50)
     private String lastName;
+
+    @Size(max = 100)
     private String email;
+    @Size(max = 50)
     private String company;
+    @Size(max = 20)
     private String phone;
+
+    @Size(max = 50)
     private String address1;
+
+    @Size(max = 50)
     private String address2;
+
+    @Size(max = 50)
     private String city;
+    @Size(max = 2,min = 2)
     private String state;
+
+    @Size(max = 10)
     private String postalCode;
+    @Size(max = 50)
     private String country;
 
 
